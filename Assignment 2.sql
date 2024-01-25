@@ -4,9 +4,9 @@ SELECT
 	cust_name AS "Customer Name",
 	s.city AS "City"
 FROM  
-	salesman s
+	salesman2 s
 JOIN 
-	customer c 
+	customer2 c 
 ON 
 	s.salesman_id=c.salesman_id 
 WHERE 
@@ -20,9 +20,9 @@ SELECT
 	cust_name AS "Customer Name",
 	city 
 FROM 
-	orders o
+	orders2 o
 JOIN 
-	customer c 
+	customer2 c 
 ON 
 	o.customer_id = c.customer_id 
 WHERE 
@@ -36,9 +36,9 @@ SELECT
 	name AS "Salesman Name",
 	commission  AS "Commission"
 FROM 
-	salesman s
+	salesman2 s
 JOIN 
-	customer c
+	customer2 c
 ON 
 	s.salesman_id = c.salesman_id
 
@@ -50,9 +50,9 @@ SELECT
 	name,
 	commission  
 FROM 
-	customer c
+	customer2 c
 JOIN 
-	salesman s
+	salesman2 s
 ON 
 	s.salesman_id = c.salesman_id 
 WHERE 
@@ -67,9 +67,9 @@ SELECT
 	s.city AS "Salesman City",
 	commission AS "Commission"
 FROM 
-	customer c
+	customer2 c
 JOIN 
-	salesman s
+	salesman2 s
 ON 
 	c.salesman_id = s.salesman_id 
 WHERE 
@@ -86,13 +86,13 @@ SELECT
 	name AS "Salesman Name",
 	commission AS "Commission" 
 FROM 
-	salesman s
+	salesman2 s
 JOIN 
-	customer c
+	customer2 c
 ON 
 	s.salesman_id = c.salesman_id 
 JOIN 
-	orders o
+	orders2 o
 ON 
 	o.salesman_id = c.salesman_id
 
@@ -111,13 +111,13 @@ SELECT
 	purch_amt AS "Order Amount",
 	ord_date AS "Order Date" 
 FROM 
-	salesman  s 
+	salesman2  s 
 JOIN 
-	customer  c 
+	customer2  c 
 ON 
 	s.salesman_id = c.salesman_id 
 JOIN 
-	orders  o 
+	orders2  o 
 ON 
 	o.salesman_id = c.salesman_id
 
@@ -130,9 +130,9 @@ SELECT
 	grade AS "Grade",name AS "Salesman Name",	
 	s.city AS "Salesman City" 
 FROM 
-	salesman AS s 
+	salesman2 AS s 
 JOIN 
-	customer AS c 
+	customer2 as c 
 ON 
 	s.salesman_id = c.salesman_id 
 ORDER BY 
@@ -147,9 +147,9 @@ SELECT
 	name AS "Salesman Name",
 	s.city AS "Salesman City"
 FROM 
-	salesman  s 
+	salesman2  s 
 JOIN 
-	customer  c 
+	customer2  c 
 ON 
 	s.salesman_id = c.salesman_id 
 WHERE 
@@ -167,9 +167,9 @@ SELECT
 	ord_date AS "Order Date" ,
 	purch_amt AS "Order Amount"
 FROM 
-	customer  c 
+	customer2  c 
 LEFT JOIN 
-	orders  o
+	orders2  o
 ON 
 	c.customer_id = o.customer_id 
 ORDER BY 
@@ -186,13 +186,13 @@ SELECT
 	name AS "Salesman Name",
 	commission AS "Commission"
 FROM 
-	customer  c 
+	customer2  c 
 LEFT JOIN 
-	orders  o 
+	orders2  o 
 ON 
 	c.customer_id = o.customer_id 
 LEFT JOIN 
-	salesman  s 
+	salesman2  s 
 ON 
 	s.salesman_id = c.salesman_id
 
@@ -205,9 +205,9 @@ SELECT
 	cust_name AS "Customer Name",
 	c.city AS "Customer City"
 FROM 
-	salesman  s  
+	salesman2  s  
 LEFT JOIN 
-	customer c 
+	customer2 c 
 ON 
 	s.salesman_id = c.salesman_id 
 ORDER BY 
@@ -223,13 +223,13 @@ SELECT
 	ord_date AS "Order Date", 
 	purch_amt AS "Order Amount"
 FROM 
-	salesman AS s 
+	salesman2 AS s 
 LEFT JOIN 
-	customer AS c 
+	customer2 as c 
 ON 
 	s.salesman_id = c.salesman_id 
 LEFT JOIN 
-	orders AS o 
+	orders2 AS o 
 ON 
 	o.salesman_id = c.salesman_id
 
@@ -245,13 +245,13 @@ SELECT
 	purch_amt AS "Order Amount",
 	ord_date AS "Order Date" 
 FROM 
-	salesman s 
+	salesman2 s 
 LEFT JOIN 
-	customer c 
+	customer2 c 
 ON 
 	s.salesman_id = c.salesman_id 
 LEFT JOIN 
-	orders  o 
+	orders2  o 
 ON 
 	o.salesman_id = c.salesman_id 
 WHERE 
@@ -267,13 +267,13 @@ SELECT
 	grade AS "Grade",
 	purch_amt AS "Order Amount"
 FROM 
-	salesman  s 
+	salesman2  s 
 LEFT JOIN 
-	customer  c 
+	customer2  c 
 ON 
 	s.salesman_id = c.salesman_id 
 LEFT JOIN 
-	orders  o 
+	orders2  o 
 ON 
 	o.salesman_id = c.salesman_id 
 WHERE 
@@ -289,9 +289,9 @@ SELECT
 	ord_date AS "Order Date" ,
 	purch_amt AS "Order Amount"
 FROM 
-	customer c 
+	customer2 c 
 FULL JOIN 
-	orders  o 
+	orders2  o 
 ON 
 	c.customer_id = o.customer_id 
 WHERE 
@@ -302,10 +302,10 @@ WHERE
 SELECT 
 	* 
 FROM 
-	salesman 
+	salesman2 
 CROSS JOIN 
-	customer 
-
+	customer2 
+	
 
 --18. Write a SQL statement to create a Cartesian product between salesperson and customer, i.e. each salesperson will appear for all customers and vice versa for thatsalesperson who belongs to that city
 SELECT 	
@@ -314,9 +314,9 @@ SELECT
 	cust_name AS "Customer Name",
 	c.city AS "Customer City" 
 FROM 
-	salesman s 
+	salesman2 s 
 CROSS JOIN 
-	customer c 
+	customer2 c 
 WHERE 
 	s.city = c.city
 
@@ -328,9 +328,9 @@ SELECT
 	cust_name AS "Customer Name",
 	c.city AS "Customer City" 
 FROM 
-	salesman s 
+	salesman2 s 
 CROSS JOIN
-	customer c  
+	customer2 c  
 WHERE 
 	s.city = c.city AND grade IS NOT NULL
 
@@ -342,8 +342,10 @@ SELECT
 	cust_name AS "Customer Name",
 	c.city AS "Customer City" 
 FROM 
-	salesman s 
+	salesman2 s 
 CROSS JOIN 
-	customer c  
+	customer2 c  
 WHERE 
 	s.city != c.city AND grade IS NOT NULL
+
+

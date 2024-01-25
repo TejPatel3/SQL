@@ -18,7 +18,7 @@ SELECT product_name, unit_price  FROM products WHERE unit_price > (SELECT AVG(un
 
 --Write a query to get Product list (name, unit price) of ten most expensive products
 
-SELECT TOP 10 product_name, unit_price  FROM products ORDER BY unit_price DESC;
+SELECT top 10  product_name, unit_price  FROM products ORDER BY unit_price DESC ;
 
 
 
